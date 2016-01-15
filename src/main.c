@@ -2,7 +2,8 @@
 #include "characters.h"
 
 static Window *main_window;
-static Layer *time_layer;
+static Layer *number_layer;
+static Layer *hand_layer;
 static GFont font_numbers;
 
 static void tick_minute_handler(struct tm *tick_time, TimeUnits units_changed) {
@@ -20,8 +21,12 @@ static GRect margin_bounds(GRect bounds, int margin_x, int margin_y) {
     };
 }
 
+static void draw_hands(struct Layer *layer, GContext *ctx) {
+    
+}
+
 static void draw_numbers(struct Layer *layer, GContext *ctx) {
-    GRect bounds = margin_bounds(layer_get_bounds(layer), 14, 16);
+    GRect bounds = margin_bounds(layer_get_bounds(layer), 14, 18);
     graphics_context_set_text_color(ctx, GColorYellow);
     for(int i=0; i<12; i++) {
         GRect rect = grect_centered_from_polar(bounds, GOvalScaleModeFitCircle, TRIG_MAX_ANGLE*i/12, (GSize){32,35});
@@ -34,21 +39,25 @@ static void main_window_load(Window *window) {
     Layer *window_layer = window_get_root_layer(window);
     GRect bounds = layer_get_bounds(window_layer);
     
-    font_numbers = fonts_load_custom_font(resource_get_handle(RESOURCE_ID_FZKATJW_SIMP_32));
+    font_numbers = fonts_load_custom_font(resource_get_handle(RESOURCE_ID_FZKATJW_DAXIE_31));
 	
 	//Make layer
-	time_layer = layer_create(bounds);
-	layer_set_update_proc(time_layer, draw_numbers);
+	number_layer = layer_create(bounds);
+	layer_set_update_proc(number_layer, draw_numbers);
+    hand_layer = layer_create(bounds);
+	layer_set_update_proc(hand_layer, draw_hands);
     
 	//Add layer
-	layer_add_child(window_layer, time_layer);
+	layer_add_child(window_layer, number_layer);
+    layer_add_child(window_layer, hand_layer);
     
     window_set_background_color(window, GColorDarkCandyAppleRed);
 }
 
 static void main_window_unload(Window *w) {
     tick_timer_service_unsubscribe();
-    layer_destroy(time_layer);
+    layer_destroy(number_layer);
+    layer_destroy(hand_layer);
     fonts_unload_custom_font(font_numbers);
 }
 

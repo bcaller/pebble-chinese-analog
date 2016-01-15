@@ -10,8 +10,15 @@
         "media": [
             {
                 "characterRegex": "[0123456789&'()*+,\\-.ABCdcYRHNXQTZShWaxw]",
+                "file": "fonts/FZKATJW--GB1-0-daxue.ttf",
+                "name": "FZKATJW_DAXIE_31",
+                "targetPlatforms": null,
+                "type": "font"
+            },
+            {
+                "characterRegex": "[0123456789&'()*+,\\-.ABCdcYRHNXQTZShWaxw]",
                 "file": "fonts/FZKATJW--GB1-0-simp-done.ttf",
-                "name": "FZKATJW_SIMP_32",
+                "name": "FZKATJW_SIMP_31",
                 "targetPlatforms": null,
                 "type": "font"
             }
@@ -19,9 +26,14 @@
     },
     "sdkVersion": "3",
     "shortName": "JiDian",
+    "targetPlatforms": [
+        "aplite",
+        "basalt",
+        "chalk"
+    ],
     "uuid": "2013beea-11d2-4045-b02e-3065ddbbefd3",
     "versionLabel": "1.0",
     "watchapp": {
-        "watchface": false
+        "watchface": true
     }
 }
