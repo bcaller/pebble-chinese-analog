@@ -1,0 +1,27 @@
+{
+    "appKeys": {},
+    "capabilities": [
+        ""
+    ],
+    "companyName": "bcaller@gmail.com",
+    "longName": "JiDian",
+    "projectType": "native",
+    "resources": {
+        "media": [
+            {
+                "characterRegex": "[0123456789&'()*+,\\-.ABCdcYRHNXQTZShWaxw]",
+                "file": "fonts/FZKATJW--GB1-0-simp-done.ttf",
+                "name": "FZKATJW_SIMP_32",
+                "targetPlatforms": null,
+                "type": "font"
+            }
+        ]
+    },
+    "sdkVersion": "3",
+    "shortName": "JiDian",
+    "uuid": "2013beea-11d2-4045-b02e-3065ddbbefd3",
+    "versionLabel": "1.0",
+    "watchapp": {
+        "watchface": false
+    }
+}
