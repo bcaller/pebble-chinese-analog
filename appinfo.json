@@ -9,16 +9,16 @@
     "resources": {
         "media": [
             {
-                "characterRegex": "[0123456789&'()*+,\\-.ABCdcYRHNXQTZShWaxw]",
-                "file": "fonts/FZKATJW--GB1-0-daxue.ttf",
-                "name": "FZKATJW_DAXIE_31",
+                "characterRegex": "[!\\\"#$%/:;<=0123456789&'()*+,\\-.ABCDEdcYRHNXQTZShWaxw]",
+                "file": "fonts/FZKATJW.ttf",
+                "name": "FZKATJW_31",
                 "targetPlatforms": null,
                 "type": "font"
             },
             {
-                "characterRegex": "[0123456789&'()*+,\\-.ABCdcYRHNXQTZShWaxw]",
-                "file": "fonts/FZKATJW--GB1-0-simp-done.ttf",
-                "name": "FZKATJW_SIMP_31",
+                "characterRegex": "[!\\\"#$%/:;<=0123456789&'()*+,\\-.ABCDEdcYRHNXQTZShWaxw]",
+                "file": "fonts/SimSun-s.ttf",
+                "name": "SIMSUN_22",
                 "targetPlatforms": null,
                 "type": "font"
             }
